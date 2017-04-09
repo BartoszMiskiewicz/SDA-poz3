@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by bartosz on 07.04.2017.
  */
-public class one {
+public class One {
 
     public static void main(String[] args){
 //        System.out.println("Hell World! :) This is began.");
