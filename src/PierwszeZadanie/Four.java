@@ -32,12 +32,12 @@ public class Four {
 //        minmax(number1, number2, number3); // przypisuje wartosci z konsoli od uzytkowania do metod ponizej
 
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj wage:>>> ");
-        int weigh = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in); // skaner zeby gadac z uzytkownikiem
+        System.out.println("Podaj wage:>>> "); // pytanie wyswietla na konsole
+        int weigh = scanner.nextInt(); // zczytanie zmiennej waga i zczytanie jej
         System.out.println("Podaj wzrost w 'cm'>>>");
-        double heightInMeters= scanner.nextDouble();
-        bmi(weigh, heightInMeters); // przypisanie zmiennych
+        double heightInMeters= scanner.nextDouble(); // next Doubel bo liczby sa po przecinku
+        bmi(weigh, heightInMeters); // przypisanie zmiennych w przypadku konsoli podajemy po przecionku wartosi , w przypadku pisania w Java po kropce
 
 
 
@@ -78,9 +78,9 @@ public class Four {
 
     public static void bmi(int weight, double heightInMeters){
 
-        double bmi = weight / (heightInMeters * heightInMeters);
+        double bmi = weight / (heightInMeters * heightInMeters); // do kwadratu mnozymy cos przez cos obliczanie waga podzielona przez waga do kwadratu  i porownujemy
         System.out.println("Twoje bmi to: " + bmi);
-        if ( bmi < 18.5) {
+        if ( bmi < 18.5) { // waga jest prawidlowa
             System.out.println("Masz niedowage");
         } else  if (bmi >= 18.5 && bmi <= 24.9) { //jezel wyjdziem poza zakres podany przez I mniejsze równe 24,9 wtedy otrzymamy Masz nadwage, kiedy bedzie mniejsza nie wyejdziemy w ta petle
             System.out.println("Twoja waga jest Ok");
