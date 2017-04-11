@@ -47,18 +47,18 @@ public class Six {
 //        getRandomArray();
     }
 
-    public static int[] getArray(int value) {
-
-
-        int size = value / 2 + value % 2;
-        int[] array = new int[size];
-        for (int i = 0; i < array.length; ++i) {
-            array[i] = 2 * i;
-        }
-
-        return array;
-
-    }
+//    public static int[] getArray(int value) {
+//
+//
+//        int size = value / 2 + value % 2;
+//        int[] array = new int[size];
+//        for (int i = 0; i < array.length; ++i) {
+//            array[i] = 2 * i;
+//        }
+//
+//        return array;
+//
+//    }
 
     // oblicz wielkosc talbicy
     // utworzyc nowa tablice
