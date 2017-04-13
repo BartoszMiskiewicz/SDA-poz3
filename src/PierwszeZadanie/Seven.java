@@ -10,6 +10,16 @@ public class Seven {
 
     public static void main(String[] args) {
 
+//        int [][] matrix = fillWithRandomNumbers(3,3); //biggerValues dopisac metode
+//        for (int i = 0; i < 100; i++) {
+//            matrix = multiplyBy(matrix, fillWithRandomNumbers(3,3));
+//            if (i % 10 == 0) {
+//                System.out.println();
+//                printMatrix(matrix);
+//            }
+//        }
+//        printMatrix(matrix);
+
 
 //       int[][] matrix = saveToMatrixExample();
 //       int [] array = {1,4,5,6,3};
@@ -34,9 +44,23 @@ public class Seven {
 //        int[][] matrix1 = fillWithRandomNumbers(3,3);
 //        int[][] matrix2 = fillWithRandomNumbers(3,3);
 //        printMatrix(addTwoArrays(matrix1,matrix2));
-        int[][] matrix = {{1, 2, 3}, {3, 2, 1}, {2, 3, 1}};
+//        int[][] matrix = {{1, 2, 3}, {3, 2, 1}, {2, 3, 1}};
+//        int[][] matrix = {{1, 2, 3}, {3, 2, 1}};
 //        printMatrix(multiplyBy(matrix, 3));
-        System.out.println(sumOfElements(matrix));
+//        System.out.println(sumOfElements(matrix));
+//        printMatrix(matrix);
+//        System.out.println();
+//        printMatrix(flip(matrix));
+        int[][] matrix1=fillWithRandomNumbers(3,4);
+        int[][] matrix2=fillWithRandomNumbers(4,8);
+        int[][] product = product(matrix1,matrix2);
+        printMatrix(matrix1);
+        System.out.println("\t*");
+        System.out.println();
+        printMatrix(matrix2);
+        System.out.println("\t=");
+        printMatrix(product);
+
 
 
     }
@@ -156,6 +180,73 @@ public class Seven {
         }
 
     }
+    //odwracamy wiersze i kolumny. Zwracamy nowa macierz
+    public static int [][] flip(int[][]matrix){
+        int rowsInOldOne = matrix.length;
+        int columnsInOldOne = matrix[0].length;
+        int [][] resultMatrix = new int[columnsInOldOne][rowsInOldOne];
+        for (int i = 0 ; i < rowsInOldOne; i++ ){
+            for (int j = 0; j < columnsInOldOne; j++) {
+                resultMatrix[j][i] = matrix[i][j];
+
+            }
+        }
+        return resultMatrix;
+    }
+
+    //bierzemy wieksza wartosc z jednego z dwoch macierzy i wrzucamy i wyrzucami ja do nowej
+    public static int[][] multipleBy(int[][] matrix1, int [][] matrix2) {
+        int[][] resultMatrix = new int[matrix1.length][matrix1[0].length];
+        for (int i = 0; i < matrix1.length; i++) {
+            for (int j = 0; j < matrix1[0].length; j++) {
+                if (matrix1[i][j] > matrix2[i][j]) {
+                } else {
+                    resultMatrix[i][j] = matrix2[i][j];
+                }
+                // mozna to zapisac tak resultMatrix[i][j] = (matrix[i][j] > matrix2[i][j]) ? matrix1[][]
+            }
+        }
+        return resultMatrix;
+
+    }
+
+
+    //zwracamy maksymalna wartosc z macierzy
+    //czy mozemy uzyc jakiejs gotowej metody?
+    public static int maxValue(int[][] matrix) {
+        int max = Five.maxFromArray(matrix[0]);
+        for (int i = 0; i < matrix.length; i++) {
+            int maxCandidate = Five.maxFromArray(matrix[i]);
+            if (max < maxCandidate) {
+                max = maxCandidate;
+            }
+
+        }
+
+        return  max;
+    }
+
+
+    //product = iloczym
+    public static int[][] product(int[][] matrix1, int[][] matrix2) {
+        int[][] resultMatrix = new int[matrix1.length][matrix2[0].length];//tworzymy macierz wynikowa resultMatrix i ilosc wierszy pierwszej matrix1 i ilosc kolumn drugiej matrix[0]
+        for (int i = 0; i < matrix1.length; i++) { //przesuwa po wierszach i
+            for (int j = 0; j < matrix2[0].length; j++){//j przesuwa po kolumnach
+                for (int k = 0; k < matrix2.length; k++) {//przechodzimy na druga kolumne i wiersz k
+                    resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j]; //daje nam wynik monozenia obu macierzy i doaje je do siebie dajac wynik
+
+                }
+            }
+
+        }
+        return  resultMatrix;//wyswietlany wynik
+    }
+
+
+
+
+
+
 }
 
 
@@ -170,9 +261,10 @@ public class Seven {
 
 
 
-//    public static int[][] multipleBy(int[][] matrix, int value){
-//        return null;
-//    }
+
+
+
+
 
 
 
