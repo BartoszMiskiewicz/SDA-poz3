@@ -10,15 +10,15 @@ public class Seven {
 
     public static void main(String[] args) {
 
-//        int [][] matrix = fillWithRandomNumbers(3,3); //biggerValues dopisac metode
-//        for (int i = 0; i < 100; i++) {
-//            matrix = multiplyBy(matrix, fillWithRandomNumbers(3,3));
-//            if (i % 10 == 0) {
-//                System.out.println();
-//                printMatrix(matrix);
-//            }
-//        }
-//        printMatrix(matrix);
+        int [][] matrix = fillWithRandomNumbers(3,3); //biggerValues dopisac metode
+        for (int i = 0; i < 100; i++) {
+            matrix = biggerValues(matrix, fillWithRandomNumbers(3,3));
+            if (i % 10 == 0) {
+                System.out.println();
+                printMatrix(matrix);
+            }
+        }
+        printMatrix(matrix);
 
 
 //       int[][] matrix = saveToMatrixExample();
@@ -195,7 +195,7 @@ public class Seven {
     }
 
     //bierzemy wieksza wartosc z jednego z dwoch macierzy i wrzucamy i wyrzucami ja do nowej
-    public static int[][] multipleBy(int[][] matrix1, int [][] matrix2) {
+    public static int[][] biggerValues(int[][] matrix1, int [][] matrix2) {
         int[][] resultMatrix = new int[matrix1.length][matrix1[0].length];
         for (int i = 0; i < matrix1.length; i++) {
             for (int j = 0; j < matrix1[0].length; j++) {
