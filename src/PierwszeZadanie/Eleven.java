@@ -9,9 +9,11 @@ import java.util.Scanner;
 public class Eleven {
     public static void main(String[] args) throws IOException {
         File file = new File("/Volumes/Dane/JavaProgramowanie/file");
-        readFromFileTest(file);
+//        readFromFileTest(file);
 //        writeToFileTest(file, "Hello World");
-        readIntegerFromFile(file);
+//        readIntegerFromFile(file);
+//        System.out.println(countOddIntegers(file));
+        System.out.println(countWordsIn(file));
     }
 
     public static int[] readIntegerFromFile(File file) throws FileNotFoundException {
@@ -23,8 +25,28 @@ public class Eleven {
         return array;
     }
 
-    public static int countOddIntegers(File file){
-        return 0;
+    public static int countWordsIn(File file) throws FileNotFoundException {
+        Scanner scanner = new Scanner(file);
+        int counter = 0;
+
+        while (scanner.hasNext()){
+            scanner.next();
+                counter++;
+
+        }
+        return counter;
+
+    }
+
+    public static int countOddIntegers(File file) throws FileNotFoundException {
+        Scanner scanner = new Scanner(file);
+        int counter = 0;
+        while(scanner.hasNext()){
+            if(scanner.nextInt() % 2 ==1) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
 
