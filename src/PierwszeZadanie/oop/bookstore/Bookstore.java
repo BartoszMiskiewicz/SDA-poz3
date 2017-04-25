@@ -43,20 +43,29 @@ public class Bookstore {
     }
 
 
-    public Book[] getBooks(String author) {
+    public Book[] getBooks(String author) {//przechodzimy po wszystkich ksiazkach
         Book[] bookToReturn = new Book[getNumberOfBooks(author)];
         int index = 0;
-        for (int i = 0; i < this.numberOfBooks; i++) {
-            if (books[i].author.equals(author)) {
+        for (int i = 0; i < this.numberOfBooks; i++) {//i wybieramy odpowiedniego autora
+            if (books[i].author.equals(author)) {// do tablicy ladujemy ksiazki te ktorych szukamy w progrmanie Application
                 bookToReturn[index] = books[i];
                 index++;
             }
         }
-        return bookToReturn;
+        return bookToReturn;//zwracamy wyszukana ksiazke
     }
 
-    public Book getBook(String author){
-        return null;
+    public Book getBook(String ISBN){//granuralne osobne rzeczy
+        Book book = null;
+        int i = 0;
+        while (i < this.numberOfBooks && book == null){
+           if (books[i].ISBN.equals(ISBN)){
+               book = books[i];
+           }
+           //book = books[i]
+           i++;
+        }
+        return book;
     }
 
 

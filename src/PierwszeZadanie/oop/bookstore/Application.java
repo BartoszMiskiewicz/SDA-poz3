@@ -7,11 +7,14 @@ public class Application {
     public static void main(String[] args) {
         Bookstore bookstore = new Bookstore();
         insertExampleDate(bookstore);
-        Book[] books = bookstore.getBooks("Henryk Sienkiewicz");
-        for (int i = 0; i <books.length ; i++) {
-            System.out.println(books[i]);
+//        Book[] books = bookstore.getBooks("Henryk Sienkiewicz");//szukana ksiazka
+//        for (int i = 0; i <books.length ; i++) {
+//            System.out.println(books[i]);
+//        }
 
-        }
+        System.out.println(bookstore.getBook("223232"));
+        System.out.println(bookstore.getBook("22323212"));
+
 //        System.out.println(bookstore.books[0].toString());
 //        bookstore.showBooks();// bo mamy regal w ktorym ustawilismy dane i daltego mozna robic show books
 

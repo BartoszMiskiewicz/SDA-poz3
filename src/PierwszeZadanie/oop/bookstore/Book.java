@@ -18,7 +18,7 @@ public class Book {//obiekt Book istnieje wtedy kiedy ma podane dane z konstukto
         this.title = title;//konstuktora to metoda przytworzeniu obiektow - odwoluje sie do obiektu ktory zostal utworzony
         this.author = author;
         this.releaseDate = releaseDate;
-        this.releaseDate = ISBN;
+        this.ISBN = ISBN;
         this.descripton = "To be updated";
 
 
