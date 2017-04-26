@@ -3,6 +3,7 @@ package PierwszeZadanie.oop.Quiz;
 
 import PierwszeZadanie.oop.Quiz.question.MockQuestionsRepository;
 import PierwszeZadanie.oop.Quiz.question.Question;
+import PierwszeZadanie.oop.Quiz.result.FileResultsRepository;
 import PierwszeZadanie.oop.Quiz.result.MockResultsRepository;
 import PierwszeZadanie.oop.Quiz.result.Result;
 
@@ -12,8 +13,9 @@ import PierwszeZadanie.oop.Quiz.result.Result;
 public class Quiz {
     public static void main(String[] args) {
         MockQuestionsRepository questionsRepository = new MockQuestionsRepository();
-        MockResultsRepository resultsRepository = new MockResultsRepository();
+        FileResultsRepository resultsRepository = new FileResultsRepository("/Volumes/Dane/JavaProgramowanie/results");
         QuizInterface quizInterface = new QuizInterface();
+
 
         boolean gameFlag = true;
 //        int decision = 0;

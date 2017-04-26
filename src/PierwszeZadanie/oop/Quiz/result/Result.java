@@ -11,6 +11,10 @@ public class Result {
         this.playerName = playerName;
         this.result = result;
     }
+    @Override
+    public String toString(){
+        return playerName + " " + result;
+    }
 
     public String getPlayerName() {
         return playerName;
