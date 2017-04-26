@@ -4,6 +4,7 @@ package PierwszeZadanie.oop.Quiz;
 import PierwszeZadanie.oop.Quiz.question.MockQuestionsRepository;
 import PierwszeZadanie.oop.Quiz.question.Question;
 import PierwszeZadanie.oop.Quiz.result.MockResultsRepository;
+import PierwszeZadanie.oop.Quiz.result.Result;
 
 /**
  * Created by bartosz on 26.04.2017.
@@ -36,7 +37,9 @@ public class Quiz {
                         }
                     }
 
-                    quizInterface.showResult(playerName, correctAnswersCounter);
+                    Result result = new Result(playerName, correctAnswersCounter);
+                    quizInterface.showResult(result);
+                    resultsRepository.add(result);
                     break;
                 case 2:
                     quizInterface.showTopResults(resultsRepository.getTopResults(10));

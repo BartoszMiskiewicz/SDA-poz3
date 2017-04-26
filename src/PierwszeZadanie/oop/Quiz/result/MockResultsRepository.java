@@ -6,6 +6,7 @@ package PierwszeZadanie.oop.Quiz.result;
 public class MockResultsRepository {
 
     private Result[] results;
+    private  int resultsCounter;
 
     public MockResultsRepository() {
         this.results = new Result[2];
@@ -15,8 +16,13 @@ public class MockResultsRepository {
     }
 
     public Result[] getAllResults() {
-        return results;
+        Result[] resultsToReturn = new Result[resultsCounter];
+        for (int i = 0; i < resultsCounter; i++) {
+            resultsToReturn[i] = results[i];
+        }
+        return resultsToReturn;
     }
+
 
     //ZADANIE DOMOWE
     //Napisac metode, podmienic w wyswietlaniu wynikow, i poprawic wyswietlanie wynikow
@@ -28,5 +34,11 @@ public class MockResultsRepository {
         }
         return resultsToReturn;
     }
+
+    public void add(Result result) {
+        this.results[resultsCounter] = result;
+        resultsCounter++;
+    }
+
 
 }
