@@ -12,7 +12,7 @@ public class Application {
 //            System.out.println(books[i]);
 //        }
 
-        System.out.println(bookstore.getBook("223232"));
+        System.out.println(bookstore.getBook("22323z2"));
         System.out.println(bookstore.getBook("22323212"));
 
 //        System.out.println(bookstore.books[0].toString());

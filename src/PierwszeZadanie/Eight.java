@@ -6,7 +6,7 @@ package PierwszeZadanie;
 public class Eight {
 
     // += dopisuje dodajemy
-    public static void main(String[] args) {
+    public static void maizn(String[] args) {
 //        System.out.println(countCharacter("Ala ma kota" , 'a'));
 //        System.out.println(countCharacter("Ala ma kota i dwa psy", 'a'));
 //        System.out.println(countCharacter("Ala ma kota i dwa pay", 'a'));
