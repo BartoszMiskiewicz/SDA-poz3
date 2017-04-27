@@ -1,19 +1,23 @@
 package PierwszeZadanie.oop.Quiz;
 
-
+import PierwszeZadanie.oop.Quiz.question.FileQuestionsRepository;
 import PierwszeZadanie.oop.Quiz.question.MockQuestionsRepository;
 import PierwszeZadanie.oop.Quiz.question.Question;
+import PierwszeZadanie.oop.Quiz.question.QuestionsRepository;
 import PierwszeZadanie.oop.Quiz.result.FileResultsRepository;
-import PierwszeZadanie.oop.Quiz.result.MockResultsRepository;
+import PierwszeZadanie.oop.Quiz.result.FileResultsRepository;
 import PierwszeZadanie.oop.Quiz.result.Result;
+import PierwszeZadanie.oop.Quiz.result.ResultsRepository;
+
 
 /**
  * Created by bartosz on 26.04.2017.
  */
 public class Quiz {
     public static void main(String[] args) {
-        MockQuestionsRepository questionsRepository = new MockQuestionsRepository();
-        FileResultsRepository resultsRepository = new FileResultsRepository("/Volumes/Dane/JavaProgramowanie/results");
+//        QuestionsRepository questionsRepository = new MockQuestionsRepository();
+        QuestionsRepository questionsRepository = new FileQuestionsRepository("/Volumes/Dane/JavaProgramowanie/quiz");
+        ResultsRepository resultsRepository = new FileResultsRepository("/Volumes/Dane/JavaProgramowanie/results");
         QuizInterface quizInterface = new QuizInterface();
 
 

@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * Created by bartosz on 26.04.2017.
  */
-public class FileResultsRepository {
+public class FileResultsRepository implements ResultsRepository{ // implementujemy zeby wywolac w main
 
     private String pathToFile;
     private File fileWithResults;
@@ -67,7 +67,7 @@ public class FileResultsRepository {
     public void add(Result result) {
         try (FileWriter fw = new FileWriter(fileWithResults, true);
              BufferedWriter bw = new BufferedWriter(fw);
-             PrintWriter out = new PrintWriter(bw)) {
+             PrintWriter out = new PrintWriter(bw)) {//jezezli wystapi blad blik bedzie bledny uruchomi sie CATCH!!!
             out.println(result.toString());//robi adda do pliku zapisuje dana do pliku
         } catch (IOException e) {//lapiemy wyjatek i obslugujemy go
             e.printStackTrace();//wypisanie bledu ale nie bedzie to blad ale program idzie dalej
